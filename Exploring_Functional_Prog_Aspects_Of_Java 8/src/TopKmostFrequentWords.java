@@ -54,7 +54,17 @@ public class TopKmostFrequentWords {
 		
 		//System.out.println(map);
 			
-		PriorityQueue<WordFreq> pq = new PriorityQueue<WordFreq>(5, (x,y) -> x.freq - y.freq);
+		PriorityQueue<WordFreq> pq = new PriorityQueue<WordFreq>(5, (x,y) -> x.freq - y.freq);  
+		
+		/*OR
+		 *  PriorityQueue<Map.Entry<String, Integer>> pq = new PriorityQueue<>(
+                 (a,b) -> a.getValue()==b.getValue() ? b.getKey().compareTo(a.getKey()) : a.getValue()-b.getValue()
+        	);
+		 * 
+		 * 
+		 */
+		
+		
 		
 		for(Map.Entry<String, Integer> e : map.entrySet()) {
 			pq.add(new WordFreq(e.getKey(), e.getValue()));
