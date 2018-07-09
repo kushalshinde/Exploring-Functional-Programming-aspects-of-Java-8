@@ -32,8 +32,8 @@ import java.util.stream.Collectors;
 public class FindMaxOccWordsExcludingCommonWords {
 	public static void main(String[] args) {
 		
-		String Sentence = "kushal and tushar went to the store to buy egg and milk milk is kushal favorite food";
-		List<String> wordtoexclude = Arrays.asList("and", "he", "the", "to", "his");
+		String Sentence = "Jack and Jill went to a market to buy bread and cheese cheese is Jack's and Jill's favorite food";
+		List<String> wordtoexclude = Arrays.asList("and", "he", "the", "to", "is");
 		
 		System.out.println(find(Sentence, wordtoexclude));
 		
@@ -43,7 +43,7 @@ public class FindMaxOccWordsExcludingCommonWords {
 	public static List<String> find(String literaturtext, List<String> wordtoexclude){
 		
 		//break the sentence into words and put them into a list
-		List<String>output = Arrays.asList(literaturtext.split("\\s+"));
+		List<String>output = Arrays.asList(literaturtext.replaceAll("[^a-zA-Z ]", " ").toLowerCase().split("\\s+"));
 	
 		
 		//filter excluded words from a stream and collect them in to a map as per their occurrences

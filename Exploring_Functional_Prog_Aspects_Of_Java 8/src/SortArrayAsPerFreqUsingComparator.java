@@ -44,18 +44,12 @@ public class SortArrayAsPerFreqUsingComparator {
 		Collections.sort(l1, (a, b) -> b.getValue().intValue() - a.getValue().intValue());
 			
 		for(Map.Entry<Integer, Integer> e : l1) {
-			if(e.getValue()>1) {
-				int max = e.getValue();
-				while(max>0) {
-					System.out.print(e.getKey()+ " ");
-					max--;
-				}
-			}
-			else {
-				System.out.print(e.getKey() + " ");
+			int val = e.getValue();
+			while(val>0) {
+				System.out.print(e.getKey()+ " ");
+				val--;
 			}
 		}
-
 	}
 
 }
